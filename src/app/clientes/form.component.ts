@@ -4,6 +4,7 @@ import { ClienteService } from './cliente.service';
 import { Router, ActivatedRoute } from '@angular/router';
 
 import { Mensajes } from './../commons/mensajes';
+import { Region } from './region';
 
 @Component({
   selector: 'app-form',
@@ -12,6 +13,7 @@ import { Mensajes } from './../commons/mensajes';
 export class FormComponent implements OnInit {
 
   private cliente: Cliente = new Cliente();
+  private regiones: Region[];
   public titulo: String = 'Crear Cliente';
   private mensajes = new Mensajes();
   private errores: string[];
@@ -22,6 +24,8 @@ export class FormComponent implements OnInit {
 
   ngOnInit() {
     this.cargarCliente();
+
+    this.clienteService.getRegiones().subscribe(regiones => this.regiones = regiones);
   }
 
   public create() {
