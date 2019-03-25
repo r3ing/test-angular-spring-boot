@@ -60,6 +60,7 @@ export class DetalleComponent implements OnInit {
 
             console.log(response);
             this.cliente = response.cliente as Cliente;
+            this.modalService.notificarUpload.emit(this.cliente);
             this.mensajes.showAlert('La foto se ha ubido correctamente!', response.mensage, 'success');
           }
         });
