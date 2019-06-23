@@ -6,6 +6,7 @@ import { ActivatedRoute } from '@angular/router';
 
 import { tap } from 'rxjs/operators';
 import { ModalService } from './detalle/modal.service';
+import { AuthService } from '../usuarios/auth.service';
 
 
 @Component({
@@ -20,6 +21,7 @@ export class ClientesComponent implements OnInit {
 
   constructor(private clienteService: ClienteService,
               private activatedRoute: ActivatedRoute,
+              private authService: AuthService, 
               private modalService: ModalService) { }
 
   ngOnInit() {

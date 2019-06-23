@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Mensajes } from '../../commons/mensajes';
 import { HttpEventType } from '@angular/common/http';
 import { ModalService } from './modal.service';
+import { AuthService } from '../../usuarios/auth.service';
 
 @Component({
   selector: 'detalle-cliente',
@@ -20,6 +21,7 @@ export class DetalleComponent implements OnInit {
   progreso: number;
 
   constructor(private clienteSerice: ClienteService,
+              private authService: AuthService,
               private modalService: ModalService) { }
 
   ngOnInit() {
